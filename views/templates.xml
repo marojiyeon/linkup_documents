@@ -1,0 +1,28 @@
+<odoo>
+    <template id="linkup_documents.access_denied">
+        <t t-call="documents.public_page_layout">
+            <t t-set="shareType" t-value="'o_access_denied'"/>
+            <h2 class="o_documents_portal_central_message text-center mt160 text-white">
+                Access Denied, You don’t have permission to access
+            </h2>
+        </t>
+    </template>
+
+    <template id="linkup_documents.share_password">
+        <t t-call="documents.public_page_layout">
+            <t t-set="head">
+                <t t-call-assets="linkup_documents.public_page_assets"/>
+            </t>
+            <t t-set="shareType" t-value="'o_share_password'"/>
+            <form enctype="multipart/form-data" t-attf-action="/document/share/#{share_id}/#{token}" method="POST">
+                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                <div class="o_form_view">
+                    <label for="password" class="o_form_label">Password</label>
+                    <input type="password" class="o_input" t-att-autofocus="'autofocus'" name="password" id="password" />
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </t>
+    </template>
+
+</odoo>

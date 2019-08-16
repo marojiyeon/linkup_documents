@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <template id="linkup_documents.public_page_assets" name="public page assets" inherit_id="documents.public_page_assets">
+        <xpath expr="." position="inside">
+            <link rel="stylesheet" type="text/scss" href="/linkup_documents/static/src/scss/documents_public_pages.scss"/>
+        </xpath>
+    </template>
+</odoo>

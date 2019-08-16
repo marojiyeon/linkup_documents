@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_linkup_documents_linkup_documents,linkup_documents.linkup_documents,model_linkup_documents_linkup_documents,,1,0,0,0

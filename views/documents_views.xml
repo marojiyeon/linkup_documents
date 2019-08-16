@@ -1,0 +1,31 @@
+<odoo>
+    <record id="share_view_form_popup_extend" model="ir.ui.view">
+        <field name="name">Share Document : add security_type filed</field>
+        <field name="model">documents.share</field>
+        <field name="inherit_id" ref="documents.share_view_form_popup"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='action']" position="after">
+            <!--<field name="action" position="after">-->
+                <field name="security_type"/>
+                <field name="security_user_ids" attrs="{'invisible' : [('security_type', 'in', ['none', 'password'])] }"/>
+                <field name="security_password" attrs="{'invisible' : [('security_type', 'in', ['none', 'users'])] }"/>
+            <!--</field>-->
+            </xpath>
+        </field>
+    </record>
+
+    <record id="share_view_form_extend" model="ir.ui.view">
+        <field name="name">Share form</field>
+        <field name="model">documents.share</field>
+        <field name="inherit_id" ref="documents.share_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='action']" position="after">
+            <!--<field name="action" position="after">-->
+                <field name="security_type"/>
+                <field name="security_user_ids" attrs="{'invisible' : [('security_type', 'in', ['none', 'password'])] }"/>
+                <field name="security_password" attrs="{'invisible' : [('security_type', 'in', ['none', 'users'])] }"/>
+            <!--</field>-->
+            </xpath>
+        </field>
+    </record>
+</odoo>
